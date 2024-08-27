@@ -6,6 +6,8 @@ import { SecondComponent } from './routing/second/second.component';
 import { ThirdComponent } from './routing/third/third.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FourthLazyComponent } from './routing/fourth-lazy/fourth-lazy.component';
+import { myCanDeactivateGuard, myGuard } from './routing/my-guard.guard';
+import { GuardComponent } from './routing/guard/guard.component';
 
 
 export const routes: Routes = [
@@ -18,7 +20,11 @@ export const routes: Routes = [
                 import('./routing/fourth-lazy/fourth-lazy.component').then(
                   (m) => m.FourthLazyComponent
                 ),},
-                
+            {path: 'guard', component: GuardComponent, canActivate: [myGuard], canDeactivate:[myCanDeactivateGuard]},
+            {path: 'guardResolve', component: GuardComponent, resolve: {user: ()=>'Sample Data'}},
+            {path: 'guardMatch', component: GuardComponent, canMatch:[()=>{return true}]},
+            {path: 'guardMatch', component: SecondComponent},
+            // Can Load is deprecated and hence there is no example.
             
         ]
     },
