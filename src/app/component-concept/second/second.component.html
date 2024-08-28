@@ -1,4 +1,15 @@
 <p>In second component</p>
 <div>Let us check for Inputs</div>
-<div>Value of 'label' after being transformed to upper case by transform function : {{label}}</div>
-<div>transform number function : {{number}}</div>
+<div>
+  Value of 'label' after being transformed to upper case by transform function :
+  {{ label }}
+</div>
+<div>transform number function : {{ number }}</div>
+<div>Alias value is={{ real }}</div>
+<span>
+  to emit output event:
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="handleClick()">
+    Click Me
+  </button>
+</span>
+

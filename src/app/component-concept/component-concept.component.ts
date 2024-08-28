@@ -12,4 +12,11 @@ import { ComponentSecondComponent } from './second/second.component';
 export class ComponentConceptComponent {
 public labelToTransform!: string;
 public noToTransform!:string;
+public aliasValue!:string;
+public outputVal!: string
+
+handleClick(val: string) {
+
+this.outputVal = val;
+}
 }
