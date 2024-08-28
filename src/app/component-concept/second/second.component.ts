@@ -32,11 +32,11 @@ export class ComponentSecondComponent {
   @Output() clicked = new EventEmitter<string>();
 
   // Developer preview output function angular 18
-  newOutput = output<string>()
+  newOutput = output<string>();
 
   handleClick() {
     this.clicked.emit('Hello');
-    this.newOutput.emit('Hello from New Output Fn')
+    this.newOutput.emit('Hello from New Output Fn');
   }
 }
 

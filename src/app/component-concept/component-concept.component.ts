@@ -12,7 +12,6 @@ import { ComponentSecondComponent } from './second/second.component';
   styleUrl: './component-concept.component.scss',
 })
 export class ComponentConceptComponent implements AfterViewChecked {
-
   // Obtain reference to the child element
   @ViewChild(ComponentSecondComponent) child!: ComponentSecondComponent;
 
@@ -22,7 +21,7 @@ export class ComponentConceptComponent implements AfterViewChecked {
   public outputVal!: string;
   public newOutputVal!: string;
   public newOutputValSubscribed!: string;
-  public newOutputVal$!: Observable<string>
+  public newOutputVal$!: Observable<string>;
 
   handleClick(val: string) {
     this.outputVal = val;
@@ -31,12 +30,10 @@ export class ComponentConceptComponent implements AfterViewChecked {
   handleNewOutput(val: string) {
     this.newOutputVal = val;
   }
-  
+
   ngAfterViewChecked(): void {
     // This is also possible
-   // this.newOutputVal$ = outputToObservable(this.child.newOutput)
-     this.child.newOutput.subscribe(x =>this.newOutputValSubscribed=x);
-
+    // this.newOutputVal$ = outputToObservable(this.child.newOutput)
+    this.child.newOutput.subscribe((x) => (this.newOutputValSubscribed = x));
   }
-
 }
