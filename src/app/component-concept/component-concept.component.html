@@ -11,12 +11,16 @@
       ><input type="text" [(ngModel)]="noToTransform" />
     </div>
     <div>
-        <label
-          >Enter the value to be formatted to number by built in formatter in
-          second component &nbsp; </label
-        ><input type="text" [(ngModel)]="noToTransform" />
-      </div>
-      <div>The value of the Output from the child component is <p class="text-red-600 inline font-bold">{{outputVal}}</p> </div>
+      The value of the Output from the child component is
+      <p class="text-red-600 inline font-bold">{{ outputVal }}</p>
+    </div>
+    <div>
+      The value of the new Output fn from the child component is
+      <p class="text-red-600 inline font-bold">{{ newOutputVal }}</p>
+      and with subscribing to function is
+      <p class="text-red-600 inline font-bold">{{ newOutputValSubscribed }}</p>
+      <!-- and with converting the output function to an observable is <p class="text-red-600 inline font-bold">{{ newOutputVal$ | async }}</p>
+ -->    </div>
     <hr class="border-2 border-gray-400 m-2" />
 
     <app-component-second
@@ -24,6 +28,8 @@
       [label]="labelToTransform"
       [number]="noToTransform"
       (clicked)="handleClick($event)"
+      (newOutput)="handleNewOutput($event)"
+      [unreal]="'ALIASVAL'"
     ></app-component-second>
   </div>
 </div>
