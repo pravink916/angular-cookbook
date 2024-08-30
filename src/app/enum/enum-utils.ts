@@ -1,7 +1,7 @@
 
 export enum ConceptPath  {
     ROUTING = 'routing',
-    COMPONENT = 'component'
+    COMPONENT = 'component-concept'
 }
 
 export enum ConceptName {

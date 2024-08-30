@@ -1,0 +1,12 @@
+<div>
+  <h1>This is the child content component</h1>
+  <p>Projected content will be shown below</p>
+  <hr class="border-t border-gray-300 mb-8" />
+  <ng-content></ng-content>
+  <ng-content select="[card-title]"></ng-content>
+  <!-- for ng project as-->
+  <ng-content select="card-name"></ng-content>
+  <div>
+    <p>HostListener example. {{ label }}</p>
+  </div>
+</div>

@@ -48,10 +48,24 @@ export const routes: Routes = [
     ],
   },
   {
-    path: 'component',
+    path: 'component-concept',
     loadComponent: () =>
       import('./component-concept/component-concept.component').then(
         (m) => m.ComponentConceptComponent
+      ),
+  },
+  {
+    path: 'component-concept/input-output',
+    loadComponent: () =>
+      import('./component-concept/input-output/input-output-main/input-output-main.component').then(
+        (m) => m.InputOutputMainComponent
+      ),
+  },
+  {
+    path: 'component-concept/content',
+    loadComponent: () =>
+      import('./component-concept/content/content-example/content-example.component').then(
+        (m) => m.ContentExampleComponent
       ),
   },
   {
