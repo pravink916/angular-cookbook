@@ -55,9 +55,16 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'input-output-component',
+    loadComponent: () =>
+      import('./component-concept/input-output/input-output-main/input-output-main.component').then(
+        (m) => m.InputOutputMainComponent
+      ),
+  },
+  {
     path: 'component-second',
     loadComponent: () =>
-      import('./component-concept/second/second.component').then(
+      import('./component-concept/input-output/second/second.component').then(
         (m) => m.ComponentSecondComponent
       ),
   },
