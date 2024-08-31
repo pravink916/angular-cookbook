@@ -1,0 +1,62 @@
+<div class="flex w-8/12 bg-blue-100 mx-auto mt-5">
+  <div class="">
+    <a
+      href=""
+      routerLink="/component-concept"
+      class="ml-4 underline text-blue-500"
+      >Go to Component Concept</a
+    >
+    <div>
+      <h2>Lifecycle Component</h2>
+      <p #exampleElement>This is an example element.</p>
+    </div>
+    <div>
+      <p>The logs are</p>
+      <br />
+      <div *ngFor="let log of logs()">
+        <h2 class="text-purple-500" #log>{{ log }}</h2>
+      </div>
+    </div>
+    <div class="pt-1">
+      Click me to trigger Change detection cycle
+      <button
+        (click)="iamclicked()"
+        class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-bold py-1 px-1 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+      >
+        Trigger
+      </button>
+    </div>
+    <div class="pt-1">
+      Manually invoke change detection after 3 seconds
+      <button
+        (click)="doChangeDetection()"
+        class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-bold py-1 px-1 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+      >
+        Trigger
+      </button>
+    </div>
+    <div>
+      Type to send to child:<input type="text" [(ngModel)]="person.name" />
+    </div>
+    <div>Person is: {{ person | json }}</div>
+    <div class="pt-1">
+      <button
+        (click)="clearLogs()"
+        class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-bold py-1 px-1 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+      >
+        Clear Logs
+      </button>
+      <button
+        (click)="dummyClicked()"
+        class="ml-3 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-bold py-1 px-1 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+      >
+        Dummy Button
+      </button>
+    </div>
+  </div>
+
+  <div class="mt-1">
+    <p class="underline">Child Component Flows</p>
+    <app-lifecycle-child [person]="person"></app-lifecycle-child>
+  </div>
+</div>

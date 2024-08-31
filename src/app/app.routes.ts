@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { LifecycleComponent } from './component-concept/lifecycle/lifecycle/lifecycle.component';
+import { CustomCard } from './component-concept/view-child/view-child-concept';
 import { MainComponent } from './main/main.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FirstComponent } from './routing/first/first.component';
@@ -57,24 +59,29 @@ export const routes: Routes = [
   {
     path: 'component-concept/input-output',
     loadComponent: () =>
-      import('./component-concept/input-output/input-output-main/input-output-main.component').then(
-        (m) => m.InputOutputMainComponent
-      ),
+      import(
+        './component-concept/input-output/input-output-main/input-output-main.component'
+      ).then((m) => m.InputOutputMainComponent),
   },
   {
     path: 'component-concept/content',
     loadComponent: () =>
-      import('./component-concept/content/content-example/content-example.component').then(
-        (m) => m.ContentExampleComponent
-      ),
+      import(
+        './component-concept/content/content-example/content-example.component'
+      ).then((m) => m.ContentExampleComponent),
   },
   {
     path: 'input-output-component',
     loadComponent: () =>
-      import('./component-concept/input-output/input-output-main/input-output-main.component').then(
-        (m) => m.InputOutputMainComponent
-      ),
+      import(
+        './component-concept/input-output/input-output-main/input-output-main.component'
+      ).then((m) => m.InputOutputMainComponent),
   },
+  {
+    path: 'component-concept/lifecycle',
+    component: LifecycleComponent,
+  },
+  { path: 'component-concept/view-child', component: CustomCard },
   {
     path: 'component-second',
     loadComponent: () =>
