@@ -9,6 +9,7 @@ import { myCanDeactivateGuard, myGuard } from './routing/my-guard.guard';
 import { RoutingComponent } from './routing/routing.component';
 import { SecondComponent } from './routing/second/second.component';
 import { ThirdComponent } from './routing/third/third.component';
+import { OutletMainComponent } from './component-concept/component-outlet/outlet-main.component';
 
 export const routes: Routes = [
   {
@@ -82,6 +83,7 @@ export const routes: Routes = [
     component: LifecycleComponent,
   },
   { path: 'component-concept/view-child', component: CustomCard },
+  {path:'component-concept/outlet', component: OutletMainComponent},
   {
     path: 'component-second',
     loadComponent: () =>
