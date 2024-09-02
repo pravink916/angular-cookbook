@@ -1,4 +1,8 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import {
+  ApplicationConfig,
+  InjectionToken,
+  provideZoneChangeDetection,
+} from '@angular/core';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -11,3 +15,5 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
   ],
 };
+
+export const MY_TOKEN = new InjectionToken<string>('my sample token');

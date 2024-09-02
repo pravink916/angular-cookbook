@@ -11,8 +11,10 @@ import { Concept } from '../types/concept';
   styleUrl: './main.component.scss',
 })
 export class MainComponent {
-  public concepts: Concept[] = [
-    { name: ConceptName.COMPONENT, path: ConceptPath.COMPONENT },
-    { name: ConceptName.ROUTING, path: ConceptPath.ROUTING },
-  ];
+  public concepts: Concept[] = Object.keys(ConceptName).map((key) => {
+    return {
+      name: ConceptName[key as keyof typeof ConceptName],
+      path: ConceptPath[key as keyof typeof ConceptPath],
+    };
+  });
 }

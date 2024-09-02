@@ -1,0 +1,24 @@
+<div class="w-4/12 bg-blue-100 mx-auto p-5">
+  <a
+    href=""
+    routerLink="/component-concept"
+    class="ml-4 underline text-blue-500"
+    >Go to Component Concept</a
+  >
+  <div class="pt-4">
+    <p appHighlight>Highlight me!</p>
+    <br />
+    <p appHighlight>
+      Move mouse over me to highligh in red. Possible by Hostlistener on the
+      directive
+    </p>
+    <br />
+    Enter the color to be used for highlight below<input [(ngModel)]="color" />
+    <p appHighlight="{{ color }}" additionalColor="amber">
+      Mouseover to highlight me in entered color
+    </p>
+  </div>
+  <br />
+  <p>Use ngNonBindable to stop evaluation.</p>
+  <p ngNonBindable>This should not evaluate: {{ 1 + 1 }}</p>
+</div>

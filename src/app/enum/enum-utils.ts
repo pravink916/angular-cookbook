@@ -1,10 +1,11 @@
-
-export enum ConceptPath  {
-    ROUTING = 'routing',
-    COMPONENT = 'component-concept'
+export enum ConceptPath {
+  ROUTING = 'routing',
+  COMPONENT = 'component-concept',
+  DI = 'di',
 }
 
 export enum ConceptName {
-    ROUTING = 'ROUTING',
-    COMPONENT = 'COMPONENT'
+  ROUTING = 'ROUTING',
+  COMPONENT = 'COMPONENT',
+  DI = 'DI',
 }

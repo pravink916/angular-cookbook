@@ -1,59 +1,12 @@
 <div class="flex justify-center">
   <div class="flex-col">
-    <div>
+    <div *ngFor="let item of concepts">
       <a
         class="underline text-blue-500"
-        routerLink="/component-concept/input-output"
+        routerLink="{{ item.route }}"
         href=""
-        >Go To Input / Output Demo</a
+        >{{ item.name }}</a
       >
-    </div>
-
-    <div>
-      <a
-        routerLink="/component-concept/content"
-        href=""
-        class="underline text-blue-500"
-      >
-        Go to Content Demo
-      </a>
-    </div>
-    <div>
-      <a
-        routerLink="/component-concept/lifecycle"
-        href=""
-        class="underline text-blue-500"
-      >
-        Go to Lifecycle Demo
-      </a>
-    </div>
-    <div>
-      <a
-        routerLink="/component-concept/view-child"
-        href=""
-        class="underline text-blue-500"
-      >
-        View Child Demo
-      </a>
-    </div>
-
-    <div>
-      <a
-        routerLink="/component-concept/outlet"
-        href=""
-        class="underline text-blue-500"
-      >
-        Outlet Demo
-      </a>
-    </div>
-    <div>
-      <a
-        routerLink="/component-concept/pipe"
-        href=""
-        class="underline text-blue-500"
-      >
-        Pipe / Logic Demo
-      </a>
     </div>
   </div>
 </div>

@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
 import { OutletMainComponent } from './component-concept/component-outlet/outlet-main.component';
+import { DirectiveConceptComponent } from './component-concept/directive-concept/directive-concept.component';
 import { LifecycleComponent } from './component-concept/lifecycle/lifecycle/lifecycle.component';
 import { PipeMainComponent } from './component-concept/pipes/pipe-main.component';
 import { CustomCard } from './component-concept/view-child/view-child-concept';
+import { DiComponent } from './di/di.component';
 import { MainComponent } from './main/main.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FirstComponent } from './routing/first/first.component';
@@ -86,6 +88,7 @@ export const routes: Routes = [
   { path: 'component-concept/view-child', component: CustomCard },
   { path: 'component-concept/outlet', component: OutletMainComponent },
   { path: 'component-concept/pipe', component: PipeMainComponent },
+  { path: 'component-concept/directive', component: DirectiveConceptComponent },
   {
     path: 'component-second',
     loadComponent: () =>
@@ -93,7 +96,9 @@ export const routes: Routes = [
         (m) => m.ComponentSecondComponent
       ),
   },
+  { path: 'di', component: DiComponent },
   { path: 'home', component: MainComponent },
+
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
