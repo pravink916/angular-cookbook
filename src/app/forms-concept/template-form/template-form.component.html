@@ -1,0 +1,34 @@
+<div class="mt-2">
+  Template Form Control - Favourite Color &nbsp;<input
+    [(ngModel)]="favouriteColor"
+  />
+  <div>
+    <form #profileForm="ngForm">
+      <div class="form-group">
+        <div>
+          First Name * :&nbsp;<input
+            type="text"
+            class="form-control"
+            [(ngModel)]="profile.firstName"
+            name="firstName"
+            id="firstName"
+            required
+            #firstName="ngModel"
+          />
+        </div>
+        @if(firstName.invalid){
+        <p class="text-red-500">First Name is mandatory!</p>
+        }
+        <div class="mt-2">
+          Last Name:&nbsp;<input
+            type="text"
+            class="form-control"
+            [(ngModel)]="profile.lastName"
+            name="lastName"
+            id="lastName"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

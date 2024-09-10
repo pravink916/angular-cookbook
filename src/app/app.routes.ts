@@ -5,6 +5,7 @@ import { LifecycleComponent } from './component-concept/lifecycle/lifecycle/life
 import { PipeMainComponent } from './component-concept/pipes/pipe-main.component';
 import { CustomCard } from './component-concept/view-child/view-child-concept';
 import { DiComponent } from './di/di.component';
+import { FormsConceptComponent } from './forms-concept/forms-concept.component';
 import { MainComponent } from './main/main.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FirstComponent } from './routing/first/first.component';
@@ -97,6 +98,7 @@ export const routes: Routes = [
       ),
   },
   { path: 'di', component: DiComponent },
+  { path: 'form', component: FormsConceptComponent },
   { path: 'home', component: MainComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },

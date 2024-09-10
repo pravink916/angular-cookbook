@@ -1,0 +1,66 @@
+<div class="mt-2">
+  Reactive Form Control - Favourite Color &nbsp;
+  <input type="text" [formControl]="favouriteColorControl" />
+
+  <form
+    [formGroup]="profile"
+    class="p-2 border-2 border-orange-200"
+    (ngSubmit)="onSubmit()"
+  >
+    <p class="pb-2">This is a Form Group</p>
+    First Name :&nbsp; <input type="text" formControlName="firstName" />
+    <br />
+    <br />
+    <label>Last Name : </label><input type="text" formControlName="lastName" />
+    <br />
+    <div formGroupName="address">
+      <h2>Address:</h2>
+      <label>Street : </label
+      ><input type="text" formControlName="street" /><br />
+      <label>P.O.Box : </label><input type="text" formControlName="pobox" />
+    </div>
+    <input
+      type="submit"
+      value="Save"
+      class="rounded text-white p-1 cursor-pointer bg-zinc-500"
+    />
+    <input
+      type="button"
+      value="Update Form"
+      class="rounded text-white p-1 cursor-pointer bg-zinc-500 ml-2"
+      (click)="updateForm()"
+    />
+  </form>
+  <p>Status of Form profile:{{ profile.status }}</p>
+  <form [formGroup]="profileBuilder" class="mt-2 p-2 border-slate-400 border-2">
+    <div class="pb-1 pt-1">
+      First Name :
+      <input type="text" id="first" formControlName="firstName" />
+    </div>
+    <div class="pb-1">
+      Last Name :
+      <input type="text" id="last" formControlName="lastName" />
+      @if(profileBuilder.get('lastName')?.hasError('required')){
+      <p class="text-red-500">This is a required field!</p>
+      } @if(profileBuilder.get('lastName')?.hasError('minlength')){
+      <p class="text-red-500">
+        The last name should be minimum 4 letters in length!
+      </p>
+      } @if(profileBuilder.get('lastName')?.hasError('needTwoA')){
+      <p class="text-red-500">The last name should have two As!</p>
+      }
+    </div>
+    <div formGroupName="address" class="pb-1">
+      <p>Address</p>
+      Street:&nbsp;<input type="text" id="street" formControlName="street" />
+    </div>
+    <div formArrayName="aliases">
+      <button (click)="addControlToArray()" class="bg-orange-200 rounded m-1">
+        Add Alias
+      </button>
+      <div *ngFor="let alias of aliases.controls; let i = index">
+        Alias{{ i }}<input id="alias{{ i }}" type="text" class="mt-1" />
+      </div>
+    </div>
+  </form>
+</div>
